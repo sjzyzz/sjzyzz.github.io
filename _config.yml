@@ -21,14 +21,14 @@
 title: 杨资璋写文字的地方
 email: yzz20@mails.tsinghua.edu.cn
 description: >- # this means to ignore newlines until "baseurl:"
-  我觉得人生活得要有自己的想法，要积极主动，不能浑浑噩噩，得过且过，随着“惯性”一直生活下去。
+  希望自己可以积极主动地度过每一天，用有自己的想法，而不是随着“惯性”浑浑噩噩的度过！
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username: jekyll
 
 # Build settings
-theme: jekyll-theme-minimal
+theme: jekyll-theme-leap-day
 plugins:
   - jekyll-feed
 # Exclude from processing.
