@@ -57,3 +57,29 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 - Normalize:减去均值，除以方差根。**使用相同的$\mu, \sigma$normalize测试集**，使得loss function更加容易优化（W和b都在大致相同的区间）\
 - Weight Initialization，为了**缓解**梯度消失和梯度爆炸，可以使用一些参数初始化方法，例如若使用RELU作为激活函数，则可以使用方差为$\frac{2}{n^[l-1]}$（He Initialization）的参数；如果使用tanh作为激活函数，则可以使用方差为$\frac{1}{n^[l-1]}$的参数（Xavier Initialization）。
 - Gradient Checking：
+
+### Hyperparameters and Optimization Algorithms
+
+- mini-batch gradient descent。epoch对应遍历一遍数据集，例如mb gd将数据集分为$T$ 个mini-batch，那么一个epoch会将参数更新$T$次。特别的，当mini-batch的size为$m$时，算法就是batch gradient descent；如果mini-batch的size为1时，算法为Stochastic gradient descent（）。bgd每次迭代花费的时间太长，sgd失去了vectorization的优势，所以实践中将size选为中间的某个值。
+- Exponentially Weighted (Moving) Averages。$V_{t} = \beta\tims v_{t-1} + (1 - \beta)\times \theata_{t}$，大致表示$t$到$t - \frac{1}{1-\beta}$这段时间内的平均值。实际上可以看成数据点向量和指数递减向量的内积。
+- Bias Correction。由于初始化$v_{0}=0$，所以在最开始的阶段$v_{t}$都十分小，所以需要修正。修正方法就是使用$\frac{v_{t}}{1-\beta^{t}}$来代替$v_{t}$。合理性在于当$t$比较小时（在初始阶段），分母比较接近0，会使得到的值变大，当$t$较大时，分母比较接近1，而不会对得到的值产生太大影响。但是在实际应用中，人们使用这个correction并不多...
+- momentum。实际上就是计算了梯度的Exponentially Weighted (Moving) Averages。作用在于不同的参数也许需要不同的learning rate，但是在实际操作中一般只会设计一个learning rate，所以对一些梯度较大的参数，这个学习率可能过大了，因而出现**振荡**。而通过计算EWA，也就是一些mini-batch的梯度平均值，可以缓解这种振荡（正负相抵消），从而加快了收敛过程。
+- RMSprop（root mean square prop）。实际上就是计算了梯度的平方的Exponentially Weighted (Moving) Averages。之后在更新参数时使用$\frac{dW}{\sqrt{S_{dW} + \epsilon}}$来代替$dW$。也就是将较大的梯度除以较大的数来防止"走的过多"，将较小的梯度除以较小的数来加快收敛。
+- Adam（Adaptive Moment Estimation）。结合了momentum和RMSprop（都结合了bias correction）。
+- Learning rate decay。
+
+## Hyperparameter Tuning, Batch Normalization and Programming Frameworks
+
+### Hyperparameter Tuning
+
+- 因为通常有很多超参数要找，所以grid search通常计算量过大，所以通常使用**random sample**或者**先粗后细**的方法来寻找最好的超参数。
+- 有一些超参数可以直接通过均匀分布采样得到样本（比如网络的层数、每层的宽度等），但是有一些不可以（比如学习率）。对于类似学习率的超参数，通过对指数进行采样，从而得到对各个数量级均有考虑的采样结果。
+
+### Batch Normalization
+
+- 基本做法就是对于每一层产生的$Z^{[l]}$，对于每一个分量减去均值、除以方差，在赋予一个新的均值和方差（通过element-wise乘法和加法），得到$\tilde{Z}^{[l]}$，再继续进行后续的步骤。特别的，使用BN时可以省略参数$b$。
+- 在test中，使用在训练中计算好的每一层的$\mu^{[l]}, \sigma^{[l]}$，使用这个值来做normalization。
+
+### Multi-class Classification
+
+-
