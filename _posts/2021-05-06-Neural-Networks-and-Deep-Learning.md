@@ -82,4 +82,20 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 
 ### Multi-class Classification
 
--
+- 实际上就是将最后一层改为softmax（与之相对的是hard max，直接产生one hot向量）。具体来说就是首先通过矩阵乘法产生$Z^{[l]}$，之后在通过公式$t = e^{Z^{[l]}}$以及一个正则化的操作最终产生$A^{[l]}$。
+
+## Introduction 2 ML Strategy
+
+- Orthogonalization。将各个目标分离开来，在调节一个目标的同时而不会影响另外一个目标。
+
+## Single Number Evaluation Metric
+
+- 多个指标一般难以比较，所以使用单一的指标。例如对多个指标取平均值，或者计算多个指标的$F1$ score。
+- Satisficing and Optimizing Metric。当有多个需要考虑的指标时，将最重要的设置为Optimizing Metric（最优化），将其他的设置为Satisficing Metric（满足一定条件即可）。这样更方便考虑。
+- Train/Dev/Test Distrbutions。Dev set和Test set应该来自相同的Distribution。
+- ***first place target, then shot at target***（以终为始哈哈哈哈哈哈哈哈）
+
+## Comparing 2 Human-level Performance
+
+- Bayes error。理论上最小的误差。可以使用Human-level来近似。
+- 对于相同的training error和dev error，不同的human performance，侧重点（avoidable bias和variance）会不同。
