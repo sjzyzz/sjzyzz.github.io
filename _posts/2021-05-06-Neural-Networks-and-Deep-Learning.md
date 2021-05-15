@@ -83,3 +83,10 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 ### Multi-class Classification
 
 -
+
+
+------------
+### Mismatched Training and Dev/Test Set
+- Human level(avoidable bias)Trian set(variance)Train-dev set(data mismatched)dev set(degree of overfitting to dev set)test set 
+- Addressing data mismatch。
+### Learning from Multiple Tasks
