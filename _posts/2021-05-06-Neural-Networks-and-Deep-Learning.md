@@ -120,3 +120,39 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
     2. 迅速搭建初始系统
     3. 使用Bias/Variance analysis和Error analysis来决定后续步骤
     4. 迭代
+
+
+
+---------------
+### Learning from Multiple Tasks
+- Transfer Learning。pre-training, fine-tuning。使用TL的场景（$A\rightarrow B$）：
+    1. A和B有相同的输入
+    2. A任务的数据比B大很多
+    3. A任务的低层级特征对B任务有帮助
+  - Multi-task Learning。
+  
+### End-2-end Deep Learning
+- 直接从输入得到输出，数据是关键，是否有足够多的数据来训练。
+- Pros and cons
+    - Pros
+      - 让数据说话
+      - 减少手工设计的部分
+    - Cons
+      - 需要大量的数据
+      - 排除了潜在的手工设计的有用特征
+- 机器学习系统有两种知识来源
+  - 数据中习得的知识
+  - 手工设计的知识
+
+# Convolutional Neural Networks
+## Foundations of Convolutional Neural Networks
+
+## Deep Convolutional Models: Case Studies
+## Object Detection
+## Special Applications: Face recogniton & Neural Style Transfer
+
+# Sequence Models
+## Recurrent Neural Networks
+## Natural Language Processing & Wrod Embeddings
+## Sequence Models & Attention Mechanism
+## Transformer Network
