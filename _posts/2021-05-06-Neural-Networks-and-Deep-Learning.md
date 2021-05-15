@@ -146,7 +146,12 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 
 # Convolutional Neural Networks
 ## Foundations of Convolutional Neural Networks
-
+- Valid convolutions：no padding；Same convolutions：pad so that output is the same as the input size
+- 卷积后的维度变化：$n\times n \rightarrow \lfloor{{ \frac{n + 2\times p - f}{s} + 1}}\rfloor \times \lfloor{\frac{n + 2 \times p - f}{s} + 1}\rfloor$
+- Convolutions Over Volume。卷积核的channel数需要和输入的channel数相同，输出的channel为1。
+- Multiple filter。首相与多个卷积核做卷积，之后再将多个结果stack。也就是说，$n\times n \times n_{c} * f \times f \times n_{c}\times n_{c}\prime \rightarrow (n-f+1) \times (n-f+1) \times n_{c}\prime$
+- One Layer of a Convolutional Network。可以类比Neural Network，每一层的每个神经元可以类比为一个卷积核（也是类似NN，先计算z，再计算a，只不过矩阵乘法变为了卷积操作），每个卷积核输出一个channel为1的图，之后这一层的所有卷积核输出的图进行stack，作为下一层的输入。
+- Pooling layers。 
 ## Deep Convolutional Models: Case Studies
 ## Object Detection
 ## Special Applications: Face recogniton & Neural Style Transfer
