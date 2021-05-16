@@ -88,6 +88,14 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 
 ### Multi-class Classification
 
+-
+
+
+------------
+### Mismatched Training and Dev/Test Set
+- Human level(avoidable bias)Trian set(variance)Train-dev set(data mismatched)dev set(degree of overfitting to dev set)test set 
+- Addressing data mismatch。
+### Learning from Multiple Tasks
 - 实际上就是将最后一层改为softmax（与之相对的是hard max，直接产生one hot向量）。具体来说就是首先通过矩阵乘法产生$Z^{[l]}$，之后在通过公式$t = e^{Z^{[l]}}$以及一个正则化的操作最终产生$A^{[l]}$。
 
 ## Structuring Machine Learning Projects
@@ -152,6 +160,7 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 - Multiple filter。首相与多个卷积核做卷积，之后再将多个结果stack。也就是说，$n\times n \times n_{c} * f \times f \times n_{c}\times n_{c}\prime \rightarrow (n-f+1) \times (n-f+1) \times n_{c}\prime$
 - One Layer of a Convolutional Network。可以类比Neural Network，每一层的每个神经元可以类比为一个卷积核（也是类似NN，先计算z，再计算a，只不过矩阵乘法变为了卷积操作），每个卷积核输出一个channel为1的图，之后这一层的所有卷积核输出的图进行stack，作为下一层的输入。
 - Pooling layers。 
+- Why Convolutions？好处在于parameter sharing和sparsity of connections。translation invariance，一只猫向右移动数个像素，依旧是一只猫。
 ## Deep Convolutional Models: Case Studies
 ## Object Detection
 ## Special Applications: Face recogniton & Neural Style Transfer
