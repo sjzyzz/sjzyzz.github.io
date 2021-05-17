@@ -82,22 +82,15 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 - 有一些超参数可以直接通过均匀分布采样得到样本（比如网络的层数、每层的宽度等），但是有一些不可以（比如学习率）。对于类似学习率的超参数，通过对指数进行采样，从而得到对各个数量级均有考虑的采样结果。
 
 ### Batch Normalization
-
 - 基本做法就是对于每一层产生的$Z^{[l]}$，对于每一个分量减去均值、除以方差，在赋予一个新的均值和方差（通过element-wise乘法和加法），得到$\tilde{Z}^{[l]}$，再继续进行后续的步骤。特别的，使用BN时可以省略参数$b$。
 - 在test中，使用在训练中计算好的每一层的$\mu^{[l]}, \sigma^{[l]}$，使用这个值来做normalization。
 
 ### Multi-class Classification
+- 实际上就是将最后一层改为softmax（与之相对的是hard max，直接产生one hot向量）。具体来说就是首先通过矩阵乘法产生$Z^{[l]}$，之后在通过公式$t = e^{Z^{[l]}}$以及一个正则化的操作最终产生$A^{[l]}$。
 
--
-
-
-------------
 ### Mismatched Training and Dev/Test Set
 - Human level(avoidable bias)Trian set(variance)Train-dev set(data mismatched)dev set(degree of overfitting to dev set)test set 
 - Addressing data mismatch。
-### Learning from Multiple Tasks
-- 实际上就是将最后一层改为softmax（与之相对的是hard max，直接产生one hot向量）。具体来说就是首先通过矩阵乘法产生$Z^{[l]}$，之后在通过公式$t = e^{Z^{[l]}}$以及一个正则化的操作最终产生$A^{[l]}$。
-
 ## Structuring Machine Learning Projects
 
 ### Introduction 2 ML Strategy
@@ -129,9 +122,6 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
     3. 使用Bias/Variance analysis和Error analysis来决定后续步骤
     4. 迭代
 
-
-
----------------
 ### Learning from Multiple Tasks
 - Transfer Learning。pre-training, fine-tuning。使用TL的场景（$A\rightarrow B$）：
     1. A和B有相同的输入
@@ -162,6 +152,11 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 - Pooling layers。 
 - Why Convolutions？好处在于parameter sharing和sparsity of connections。translation invariance，一只猫向右移动数个像素，依旧是一只猫。
 ## Deep Convolutional Models: Case Studies
+- ResNet。一个问题就是如果x与a的维度不同，将x乘以一个矩阵W，这个W的shape以及如何确定。
+- $1 \times 1$ convolution。改变channel数。
+- Inception Network。由Inception Module构成。同时经过$1\times1$ CONV，$1\times1$ CONV + $3 \times 3$ CONV，$1\times1$ CONV + $5\times5$ CONV，MAXPOOL(with same padding) + $1 \times 1$ CONV，将各个结果concat，得到最终结果。同时，模型在训练中还会取一些中间的隐藏层来做预测，既可以防止模型过拟合，同时也有利于梯度的传播。
+- MobileNet。组成模块（depthwise separateable convolution），首先进行depthwise CONV，再进行pointwise CONV，从而达到减少计算量的目的。通过depthwise CONV，可以得到$H,W$和正常卷积结果相同的结果，通过pointwise CONV，可以得到和channel数和正常卷积结果相同的结果。MobileNet v2，首先加入Residual Connection，之后对组成模块进行了修改，具体就是首先通过$1\times1$ CONV进行扩展，之后进行depthwise CONV，最后再进行projection（依旧是$1\times1$ CONV），之后再与最开始的输入进行加和（short cut）。
+- EfficientNet。动态调整神经网络的深度、宽度和图像分辨率。
 ## Object Detection
 ## Special Applications: Face recogniton & Neural Style Transfer
 
