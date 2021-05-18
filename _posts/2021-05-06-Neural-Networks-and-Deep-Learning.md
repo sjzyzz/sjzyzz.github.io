@@ -157,6 +157,7 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 - Inception Network。由Inception Module构成。同时经过$1\times1$ CONV，$1\times1$ CONV + $3 \times 3$ CONV，$1\times1$ CONV + $5\times5$ CONV，MAXPOOL(with same padding) + $1 \times 1$ CONV，将各个结果concat，得到最终结果。同时，模型在训练中还会取一些中间的隐藏层来做预测，既可以防止模型过拟合，同时也有利于梯度的传播。
 - MobileNet。组成模块（depthwise separateable convolution），首先进行depthwise CONV，再进行pointwise CONV，从而达到减少计算量的目的。通过depthwise CONV，可以得到$H,W$和正常卷积结果相同的结果，通过pointwise CONV，可以得到和channel数和正常卷积结果相同的结果。MobileNet v2，首先加入Residual Connection，之后对组成模块进行了修改，具体就是首先通过$1\times1$ CONV进行扩展，之后进行depthwise CONV，最后再进行projection（依旧是$1\times1$ CONV），之后再与最开始的输入进行加和（short cut）。
 - EfficientNet。动态调整神经网络的深度、宽度和图像分辨率。
+- Data Augmentation。Mirroring，Random Cropping；Color shifting。通常来说在运行深度学习算法时，CPU程序从硬盘读入数据并进行数据增强，之后GPU（或CPU）进行网络传播，两个部分是并行的。
 ## Object Detection
 ## Special Applications: Face recogniton & Neural Style Transfer
 
