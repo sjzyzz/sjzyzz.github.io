@@ -172,6 +172,7 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 - One Shot Learning Problem。只有一个训练样本，但是要再次识别出这个人。解决方法为学习一个similarity function。
 - Slamese Network。对两个样本经过同一个网络输出它们的encodeing，如果两个样本是同一个人，那么久这两个encodeing的差的norm就小，反之则大。
 - Triplet Loss。在训练Slamses Network时，需要找一个合适的损失函数。Triplet Loss就是这样一个函数，它的输入为Anchor，Positive和Negative，公式为$\mathcal{J} = \sum^{m}_{i=1} \large[  \mid \mid f(A^{i} - f(P^{i})) \mid\mid_2^2 - \mid\mid f(A^{(i)}) - f(N^{(i)})\mid\mid_2^2 + \alpha \large] \small_ +$。意思也就是
+- Neural Style Transfer。首先明确问题，style transfer包含两个方面，内容和风格。如何实现内容相似？使用已经训练好的神经网络的中间层的输出（$a^{[l]}$）作为标准，要求两件作品的中间层输出相同，通过不断修改生成作品$G$，从而不断减小二者的差别。如何实现风格相似？首先需要定义风格，对应的论文是使用每一层的输出的activation的Gram Matrix作为style的定义，通过不断修改作品，不断减小二者对应的差别。
 # Sequence Models
 ## Recurrent Neural Networks
 ## Natural Language Processing & Wrod Embeddings
