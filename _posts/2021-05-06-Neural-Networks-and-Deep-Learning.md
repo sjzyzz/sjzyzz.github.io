@@ -171,7 +171,7 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 ## Special Applications: Face recogniton & Neural Style Transfer
 - One Shot Learning Problem。只有一个训练样本，但是要再次识别出这个人。解决方法为学习一个similarity function。
 - Slamese Network。对两个样本经过同一个网络输出它们的encodeing，如果两个样本是同一个人，那么久这两个encodeing的差的norm就小，反之则大。
-- Triplet Loss。在训练Slamses Network时，需要找一个合适的损失函数。Triplet Loss就是这样一个函数，它的输入为Anchor，Positive和Negative，公式为$\mathcal{J} = \sum^{m}_{i=1} \large[ \small \mid \mid f(A^{i} - f(P^{i})) \mid\mid_2^2 - \mid\mid f(A^{(i)}) - f(N^{(i)})\mid\mid_2^2 + \alpha \large ] \small_ + \tag{3}$
+- Triplet Loss。在训练Slamses Network时，需要找一个合适的损失函数。Triplet Loss就是这样一个函数，它的输入为Anchor，Positive和Negative，公式为$\mathcal{J} = \sum^{m}_{i=1} \large[ \small \mid \mid f(A^{i} - f(P^{i})) \mid\mid_2^2 - \mid\mid f(A^{(i)}) - f(N^{(i)})\mid\mid_2^2 + \alpha \large ] \small_ +$。
 # Sequence Models
 ## Recurrent Neural Networks
 ## Natural Language Processing & Wrod Embeddings
