@@ -175,6 +175,11 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 - Neural Style Transfer。首先明确问题，style transfer包含两个方面，内容和风格。如何实现内容相似？使用已经训练好的神经网络的中间层的输出（$a^{[l]}$）作为标准，要求两件作品的中间层输出相同，通过不断修改生成作品$G$，从而不断减小二者的差别。如何实现风格相似？首先需要定义风格，对应的论文是使用每一层的输出的activation的Gram Matrix作为style的定义，通过不断修改作品，不断减小二者对应的差别。
 # Sequence Models
 ## Recurrent Neural Networks
+- Notation。对于每一个词汇，可以使用一个one hot的向量来表示。
+- Recurrent Neural Network Model。什么是RNN？
+- Backpropagation Through Time。RNN如何进行BP？
+- Different Type of RNNs。
+- Language Model and Sequence Generation。什么是Language Model？如何使用RNN搭建一个LM？
 ## Natural Language Processing & Wrod Embeddings
 ## Sequence Models & Attention Mechanism
 ## Transformer Network
