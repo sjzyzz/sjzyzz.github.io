@@ -180,6 +180,18 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 - Backpropagation Through Time。RNN如何进行BP？
 - Different Type of RNNs。
 - Language Model and Sequence Generation。什么是Language Model？如何使用RNN搭建一个LM？
+- Sampling Novel Sequences。什么是Sampling Novel Sequences？
+- Vanishing Gradients with RNNs。
+- Gated Recurrent Unit（GRU）。motivation，什么是GRU
+- Long Short Term Memory（LSTM）。motivation，什么是LSTM
+- Bidirectional RNN。motivation，什么是BRNN
+- Deep RNNs
 ## Natural Language Processing & Wrod Embeddings
+- Introduction 2 Word Embeddings。motivation，什么是Word Embedding，如何使用WE。衍生出一个问题如何衡量similarity，一个比较常用的方法是Cosine similarity。表示方法为Embedding Matrix。
+### Learning Word Embeddings:Word2Vec & GloVe
+- 什么是**Skip Word2Vec**？它的motivation是什么？
+- 什么是**Negative Sampling** ？它的motivation是什么？
+- 什么是**GloVe Word Vectors**（global vectors for word representation）？它的motivation是什么？
+### Applications Using Word Embeddings
 ## Sequence Models & Attention Mechanism
 ## Transformer Network
