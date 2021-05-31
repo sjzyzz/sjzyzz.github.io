@@ -193,5 +193,11 @@ bias取决于模型在训练集上的准确率高低，variance取决于模型�
 - 什么是**Negative Sampling** ？它的motivation是什么？
 - 什么是**GloVe Word Vectors**（global vectors for word representation）？它的motivation是什么？
 ### Applications Using Word Embeddings
+- Sentiment Classification。
 ## Sequence Models & Attention Mechanism
+### Various Sequence To Sequence Architectures
+- Beam Search。motivation，是什么？
+- Attention Model Intuition。motivation，是什么。
+### Speech Recognition - Audio Data
+- 
 ## Transformer Network
