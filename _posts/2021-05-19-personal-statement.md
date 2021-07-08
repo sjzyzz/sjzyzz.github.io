@@ -1,5 +1,5 @@
 ---
-title: 个人宣言
+title: personal statement
 layout: post
 category: always-update
 ---

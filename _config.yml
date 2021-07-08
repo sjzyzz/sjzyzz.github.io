@@ -21,11 +21,11 @@
 title: 杨资璋写文字的地方
 email: yzz20@mails.tsinghua.edu.cn
 description: >- # this means to ignore newlines until "baseurl:"
-  希望自己可以积极主动地度过每一天，用有自己的想法，而不是随着“惯性”浑浑噩噩的度过！
+  You r always choosing!!!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username: jekyll
+twitter_username: sjzyzz
+github_username: sjzyzz
 
 # Build settings
 theme: minima
