@@ -1,9 +1,9 @@
 --- 
-title: the subtle art of not giving a fuck
+title: some impressive sentences
 layout: post
 category: reading
 ---
-# some impressive sentences
+# the subtle art of not giving a fuck 
 ## you are always choosing
 > In his diary, he wrote that he would spend one year believing that he was 100 percent responsible for everything that occurred in his life , no matter what.
 
