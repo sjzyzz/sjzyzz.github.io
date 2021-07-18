@@ -31,3 +31,17 @@ category: reading
 ## THE HEADSPACE GUIDE TO MEDITATION & MINDFULLNESS
 
 > We are anxious about feeling anxious
+
+## Steve Jobs' 2005 Standford Commencement Address
+
+> You've got to find what you love. If you haven't found it yet, keep looking, don't settle.
+
+> If today were the last day of my life, would I want to do what I am about to do today?
+
+> Remembering that I'll be dead soon is the most important tool I've encountered to help me make the big choices in life. Because almost everything, all external expectiations, all pride, all fear of embarrassment or failure, these things just fall away in the face of death, leaving only what is truly important.
+
+> Rememberintg that you are going to die is the best way I know to avoid the trap of thinking you have something to lose. You are already naked. There is no reason not to follow your heart.
+
+> Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma which is living with the result of other people's thinking. Don't let the noise of others' opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition, they somehow already know you truly want to become. Everything else is secondary.
+
+> Stay Hungry, Sray Foolish.
