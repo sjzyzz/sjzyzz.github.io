@@ -27,3 +27,7 @@ category: reading
 
 
 > You are **already choosing**, in every moment of every day, what to give a fuck about, so change is as simple as choosing to give a fuck about something else.
+
+## THE HEADSPACE GUIDE TO MEDITATION & MINDFULLNESS
+
+> We are anxious about feeling anxious
